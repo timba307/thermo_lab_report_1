@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.10)  18 OCT 2025 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.10)  18 OCT 2025 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/timtr/OneDrive/Dokumente/JKU/9_Semester/PR Thermofluiddynamik Labor/Protokoll/main.tex"
-(c:/Users/timtr/OneDrive/Dokumente/JKU/9_Semester/PR Thermofluiddynamik Labor/Protokoll/main.tex
+**"c:/Users/timtr/OneDrive/Dokumente/JKU/9_Semester/PR Thermofluiddynamik Labor/thermo_lab_report_1/main.tex"
+(c:/Users/timtr/OneDrive/Dokumente/JKU/9_Semester/PR Thermofluiddynamik Labor/thermo_lab_report_1/main.tex
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
 (C:\Users\timtr\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1275,14 +1275,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  58617 strings out of 473577
- 1359852 string characters out of 5716317
+ 1360002 string characters out of 5716317
  2422090 words of memory out of 5000000
  81137 multiletter control sequences out of 15000+600000
  566365 words of font info for 55 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 95i,15n,101p,1282b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 95i,15n,101p,1292b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\timtr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\timtr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\timtr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\timtr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2488.pk> <C:\Users\timtr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\timtr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
-Output written on main.pdf (3 pages, 1133214 bytes).
+Output written on main.pdf (3 pages, 1133216 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)

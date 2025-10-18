@@ -1,6 +1,6 @@
-PWD c:\Users\timtr\OneDrive\Dokumente\JKU\9_Semester\PR Thermofluiddynamik Labor\Protokoll
+PWD c:\Users\timtr\OneDrive\Dokumente\JKU\9_Semester\PR Thermofluiddynamik Labor\thermo_lab_report_1
 INPUT C:\Users\timtr\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\timtr\OneDrive\Dokumente\JKU\9_Semester\PR Thermofluiddynamik Labor\Protokoll\main.tex
+INPUT c:\Users\timtr\OneDrive\Dokumente\JKU\9_Semester\PR Thermofluiddynamik Labor\thermo_lab_report_1\main.tex
 OUTPUT main.log
 INPUT C:\Users\timtr\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Users\timtr\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
