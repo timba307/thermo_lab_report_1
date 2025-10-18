@@ -1,0 +1,8 @@
+# Ignore all files directly in Protokoll except .tex and .bib
+Protokoll/*
+!Protokoll/*.tex
+!Protokoll/*.bib
+
+# Do NOT ignore anything in subfolders of Protokoll
+!Protokoll/*/
+

@@ -1,0 +1,120 @@
+\documentclass[a4paper, 12pt, notitlepage]{report}
+
+\usepackage[utf8]{inputenc}     %Sonderzeichen und Umlaute für ältere Latexversionen
+\usepackage[naustrian]{babel}   %Datumsangaben, etc. in richtigen Format
+\usepackage[T1]{fontenc}        %8-bit encoding für Schriftarten
+
+%Nützliche Pakete
+\usepackage{graphicx}           %Bilder einfügen
+\usepackage{float}              %Bilder exakte Position
+\usepackage{longtable}          %Tabellen über mehrere Seiten
+\usepackage{multirow}           %Tabellem Zellen verbinden
+\usepackage{siunitx}            %Einheiten richtig darstellen
+\usepackage[hidelinks]{hyperref}           %Auf Bilder/Tabellen referenzieren
+\usepackage{amsmath}            %Mathematik Paket
+\usepackage{breqn}              %mehrere Zeilen in Gleichung
+\usepackage{pdfpages}           %Ganze PDF Seiten einfügen
+\usepackage[inkscapelatex=false]{svg}   %*.svg einfügen
+\usepackage[straight voltages, european, siunitx, EFvoltages]{circuitikz} % Zum Zeichnen von Schaltungen
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{cases}
+\usepackage{amssymb}
+\usepackage{bigstrut}
+\usepackage{subcaption}
+
+\usetikzlibrary{decorations.pathreplacing} % Dekorationsbibliothek laden
+%\usepackage[table,xcdraw]{xcolor} % xcolor Paket für Farben
+
+\usepackage{listings} % Paket zum Einbinden von Code
+\lstset{literate=
+	{ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{ß}{{\ss}}1
+}
+%\lstset{ % Einstellungen für die Code-Darstellung
+%    language=C++,         % Sprache des Codes
+%    basicstyle=\scriptsize\ttfamily, % Grundschriftart (monospaced)
+%    keywordstyle=\color{blue}\bfseries, % Stil für Schlüsselwörter
+%    commentstyle=\color{gray},          % Stil für Kommentare
+%    stringstyle=\color{red},            % Stil für Strings
+%    numbers=left,                       % Zeilennummerierung links
+%    numberstyle=\tiny,                  % Stil der Zeilennummerierung
+%    stepnumber=1,                       % Jedes Zeile nummerieren
+%    breaklines=true,                    % Automatischer Zeilenumbruch
+%    showstringspaces=false              % Leerzeichen in Strings nicht anzeigen
+%}
+
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\linespread{0.9}\ttfamily\footnotesize,
+	breakatwhitespace=true,
+	keepspaces=true,
+	captionpos=b,
+	breaklines=true,
+	frame=single,
+	showspaces=false,
+	numbers=left,
+	numbersep=5pt,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+	extendedchars=true
+}
+
+%Seitenformatierung
+\usepackage{geometry}
+\geometry{paper=a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm}  
+
+%Kopf und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\setlength{\headheight}{19pt}
+\fancyhead[L]{PR Thermofluiddynamik Labor}
+\fancyhead[R]{\includegraphics[height=1\baselineskip]{Fotos/JKU_Logo.png}}
+\fancyfoot[R]{Seite: \thepage}
+
+%Kopf und Fußzeile auf ersten Seite
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+%Literaturverzeichnis
+\usepackage{csquotes}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{literatur.bib}
+
+%Kapitelformat
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\thechapter\space}{0pt}{\Large}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection\space}{0pt}{\large}
+\titlespacing{\chapter}{0pt}{-20pt}{10pt}
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+%Format bei Absätzen formatieren
+\usepackage{parskip}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1.1ex plus 0.15ex minus 0.25ex}
+
+\begin{document}
+    \input{titlepage}
+    \tableofcontents
+    \include{Aufgabe_1}
+  
+    \pagebreak
+
+\end{document}
+
