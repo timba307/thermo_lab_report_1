@@ -1,0 +1,54 @@
+clc;
+clear all;
+reset_COM()
+
+%Delta must be divideable by the step size!!!! Make if condition!!!
+%Grid parametrers
+x_start = 30;              %mm
+y_start = 40;               %mm
+z_start = 245;              %mm
+
+x_end = x_start;                %mm
+y_end = -(y_start-140-40);                %mm
+z_end = z_start;                %mm
+
+% x_end-x_start muss ein ganzzahliges Vielfaches von x_step sein!!!
+
+x_step = 1;                 %mm
+y_step = 10;                 %mm
+z_step = 1;                 %mm
+
+%open for erfi power supply DO NOT CHANGE!!!
+COM_number = 'COM3';                %specifiy where the erfi Power Supply is plugged in
+br = 9600;                        %boudrate of Power Supply
+s = set_COM(COM_number,br);
+
+samp =  [1000];    %Take from previus Experiment
+Volt =  [5];    %flowrate regulation of the pump
+VR =    [2];    %Velocity range of the ADV DO NOT CHANGE
+if length(Volt) ~= length(VR) && length(Volt) ~= length(samp)
+    error('Unequal length of settings!')
+end
+
+for i=1:length(Volt)
+        
+    WUV = 10;                       %Set Level according to STABILITY OF OBSTACLE!!!!
+%     set_erfi_COMopen(s,WUV);         %Wirl up seeding 
+%     disp('Whirling up the seeding for 30sec!')
+%     pause(30);
+    set_erfi_COMopen(s,Volt(i));
+    disp('Wait until system is engaged 30sec!')
+    pause(10);
+    init_COMB(VR(i),samp(i),['InletProfil_h111_' num2str(Volt(i)) 'V'],x_start,y_start,z_start,x_end,y_end,z_end,x_step,y_step,z_step);%Change name of file here!!
+    
+    set_erfi_COMopen(s,0);     
+    %disp('Pump cooling for 5min!')
+    %pause(300);
+end
+
+disp('Shuting down pump!')
+set_erfi_COMopen(s,0);       %Shutdown Pump
+
+disp('Sequence finished!')
+
+reset_COM()
