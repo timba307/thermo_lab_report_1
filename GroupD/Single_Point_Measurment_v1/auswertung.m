@@ -36,9 +36,9 @@ points = 1:10;
 
 figure('Name', 'Mean Velocity Profile X');
 
-plot(points, mean_x, 'LineWidth', 1.5, 'Marker', 'o', 'DisplayName', 'Mean X-Velocity');
+plot(points, mean_x, 'LineWidth', 1.5, 'Marker', 'o', 'DisplayName', 'Mean X-Velocity', 'Color', "b");
 ylim([0.09 0.13]);
-title('Mean Velocity Profile Across 10 Measurement Points');
+title('Mean X Velocity');
 xlabel('Measurement Point Number');
 ylabel('Mean Velocity (m/s)');
 legend('show', 'Location', 'best');
@@ -49,9 +49,9 @@ xticks(points);
 % Plot x-Geschwindigkeit
 figure('Name', 'Mean Velocity Profile Y');
 
-plot(points, mean_y, 'LineWidth', 1.5, 'Marker', 's', 'DisplayName', 'Mean Y-Velocity');
+plot(points, mean_y, 'LineWidth', 1.5, 'Marker', 's', 'DisplayName', 'Mean Y-Velocity', 'Color', "g");
 ylim([0 0.009]);
-title('Mean Velocity Profile Across 10 Measurement Points');
+title('Mean Y Velocity');
 xlabel('Measurement Point Number');
 ylabel('Mean Velocity (m/s)');
 legend('show', 'Location', 'best');
@@ -62,9 +62,9 @@ xticks(points);
 %Plot Z-Geschwindigkeit
 figure('Name', 'Mean Velocity Profile Z');
 
-plot(points, mean_z, 'LineWidth', 1.5, 'Marker', '^', 'DisplayName', 'Mean Z-Velocity');
+plot(points, mean_z, 'LineWidth', 1.5, 'Marker', '^', 'DisplayName', 'Mean Z-Velocity', 'Color', "r");
 ylim([-0.003 0.003]);
-title('Mean Velocity Profile Across 10 Measurement Points');
+title('Mean Z Velocity');
 xlabel('Measurement Point Number');
 ylabel('Mean Velocity (m/s)');
 legend('show', 'Location', 'best');
@@ -74,25 +74,25 @@ xticks(points);
 
 % 3D-Plot
 %Skalierungsfaktor um die Werte anzugleichen
-exaggeration_factor = 25;
+scaling_factor = 50;
 
 x_origins = zeros(1, 10);
 y_origins = 1:10;  % 10 Punkte in y richtung
 z_origins = zeros(1, 10);
 
 u_components = mean_x;
-v_components = mean_y * exaggeration_factor; 
-w_components = mean_z * exaggeration_factor;
+v_components = mean_y * scaling_factor; 
+w_components = mean_z * scaling_factor;
 
 figure('Name', '3D Velocity Vector Plot (Scaled)');
 
 quiver3(x_origins, y_origins, z_origins, ...
         u_components, v_components, w_components, ...
         'LineWidth', 2, ...         
-        'Color', [0 0.4 0.8], ...  
+        'Color', "b", ...  
         'MaxHeadSize', 0.1);      
 
-title_str = sprintf('3D Velocity Vectors (Y & Z scaled %dx)', exaggeration_factor);
+title_str = sprintf('3D Velocity Vectors (Y & Z scaled %dx)', scaling_factor);
 title(title_str);
 xlabel('X-Position');
 ylabel('Y-Position (Measurement Point)');
@@ -101,6 +101,7 @@ zlabel('Z-Position');
 yticks(1:10);
 yticklabels({'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10'});
 
+set(gca, 'YDir', 'reverse');
 grid on;
 axis vis3d;
 
